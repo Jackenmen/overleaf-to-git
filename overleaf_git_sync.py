@@ -38,6 +38,7 @@ def main() -> int:
             subprocess.check_call(
                 (
                     "ols",
+                    "-v",
                     "--remote-only",
                     "--path",
                     tmpdir,
