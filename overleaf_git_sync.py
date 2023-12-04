@@ -34,7 +34,11 @@ def main() -> int:
             version_number = v["toV"]
             author = v["meta"]["users"][0]
             author_name = f"{author['first_name']} {author['last_name']}"
-            env = {**os.environ, "GIT_AUTHOR_NAME": author_name}
+            env = {
+                **os.environ,
+                "GIT_AUTHOR_NAME": author_name,
+                "GIT_COMMITTER_NAME": author_name,
+            }
             subprocess.check_call(
                 (
                     "ols",
